@@ -1,40 +1,59 @@
 import streamlit as st
 import requests
+import random
 
-# Streamlit UI
-st.title("Heart Disease Prediction App")
+# FastAPI backend URL
+API_URL = "http://127.0.0.1:8000/predict"
 
-# Model selection
-model_name = st.selectbox("Select Model", ["random_forest", "logistic_regression", "svm"])
+# Define feature ranges for randomization
+FEATURE_RANGES = {
+    "age": (30, 80),
+    "sex": (0, 1),
+    "chest_pain_type": (1, 4),
+    "resting_bp": (90, 180),
+    "cholesterol": (120, 400),
+    "fasting_blood_sugar": (0, 1),
+    "resting_ecg": (0, 2),
+    "max_heart_rate": (60, 220),
+    "exercise_angina": (0, 1),
+    "oldpeak": (0.0, 6.2),
+    "st_slope": (0, 2),
+}
 
-# User inputs
-age = st.number_input("Age", min_value=1, max_value=120)
-sex = st.radio("Sex", [0, 1])
-chest_pain_type = st.selectbox("Chest Pain Type", [0, 1, 2, 3])
-resting_bp = st.number_input("Resting Blood Pressure", min_value=50, max_value=200)
-cholesterol = st.number_input("Cholesterol", min_value=100, max_value=500)
-fasting_blood_sugar = st.radio("Fasting Blood Sugar > 120 mg/dl", [0, 1])
-resting_ecg = st.selectbox("Resting ECG", [0, 1, 2])
-max_heart_rate = st.number_input("Max Heart Rate", min_value=50, max_value=250)
-exercise_angina = st.radio("Exercise-Induced Angina", [0, 1])
-oldpeak = st.number_input("Oldpeak", min_value=0.0, max_value=10.0)
-st_slope = st.selectbox("ST Slope", [0, 1, 2])
-target = st.number_input("Target", [0, 1])
+# Initialize session state for inputs
+if "inputs" not in st.session_state:
+    st.session_state.inputs = {k: v[0] for k, v in FEATURE_RANGES.items()}
 
-# Prediction button
-if st.button("Predict"):
-    data = {
-        "age": age, "sex": sex, "chest_pain_type": chest_pain_type, "resting_bp": resting_bp,
-        "cholesterol": cholesterol, "fasting_blood_sugar": fasting_blood_sugar, "resting_ecg": resting_ecg,
-        "max_heart_rate": max_heart_rate, "exercise_angina": exercise_angina, "oldpeak": oldpeak,
-        "st_slope": st_slope, "target": target
+# UI Header
+st.title("💓 Heart Disease Prediction")
+st.write("Enter patient details or click 'Randomize Input' to generate values.")
+
+# **Randomise Button**
+if st.button("🎲 Randomise Input"):
+    st.session_state.inputs = {
+        feature: random.randint(low, high) if isinstance(low, int) else round(random.uniform(low, high), 2)
+        for feature, (low, high) in FEATURE_RANGES.items()
     }
 
-    response = requests.post(f"http://localhost:8000/predict/{model_name}", json=data)
+# Create input fields
+user_input = {}
+for feature, (low, high) in FEATURE_RANGES.items():
+    user_input[feature] = st.number_input(
+        feature.replace("_", " ").title(),
+        min_value=low,
+        max_value=high,
+        value=st.session_state.inputs[feature],
+    )
+
+# **Model Selection**
+model_choice = st.selectbox("Select Model:", ["random_forest", "logistic_regression", "svm"])
+
+# **Predict Button**
+if st.button("🔍 Predict"):
+    response = requests.post(f"{API_URL}/{model_choice}", json=user_input)
 
     if response.status_code == 200:
-        prediction = response.json()["prediction"]
-        result = "Positive (Heart Disease Detected)" if prediction == 1 else "Negative (No Heart Disease)"
-        st.success(f"Prediction: {result}")
+        prediction = response.json().get("prediction", "Error")
+        st.success(f"🩺 Prediction: **{'Heart Disease Detected' if prediction == 1 else 'No Heart Disease'}**")
     else:
-        st.error("Error in prediction. Check API connection.")
+        st.error(f"⚠️ Error: {response.json().get('error', 'Unknown error')}")
