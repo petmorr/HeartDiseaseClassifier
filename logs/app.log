@@ -351,3 +351,75 @@ Random_Forest        0.905556   0.933333  0.884211  0.908108  0.963282
 Svm                  0.838889   0.858696  0.831579  0.844920  0.933251
 [2025-01-31 22:03:36,391] [INFO] - 🏆 Best Model: Random_Forest with Accuracy: 0.9056
 [2025-01-31 22:03:36,391] [INFO] - ✅ Pipeline execution completed successfully.
+[2025-01-31 22:12:42,714] [INFO] - 🚀 Starting full model training and evaluation pipeline...
+[2025-01-31 22:12:42,714] [INFO] - 📊 Running data processing...
+[2025-01-31 22:12:42,714] [INFO] - 📂 Loading dataset...
+[2025-01-31 22:12:42,736] [INFO] - 🟢 Applying SMOTE with safe_sampling_strategy=0.90
+[2025-01-31 22:12:42,909] [INFO] - ✅ Data preprocessing completed successfully.
+[2025-01-31 22:12:42,909] [INFO] - ✅ Data processing completed successfully.
+[2025-01-31 22:12:42,909] [INFO] - 🤖 Training logistic_regression model...
+[2025-01-31 22:12:42,909] [INFO] - 🔍 Training Logistic Regression model...
+[2025-01-31 22:12:42,909] [INFO] - 🔬 Performing hyperparameter tuning...
+[2025-01-31 22:12:46,586] [INFO] - ✅ Best Parameters: {'solver': 'liblinear', 'penalty': 'l2', 'C': 0.01}
+[2025-01-31 22:12:46,589] [INFO] - 📊 Validation Accuracy: 0.8659
+[2025-01-31 22:12:46,596] [INFO] - 📈 Test Accuracy: 0.8389
+[2025-01-31 22:12:46,596] [INFO] - 📜 Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.83      0.84      0.83        85
+           1       0.85      0.84      0.85        95
+
+    accuracy                           0.84       180
+   macro avg       0.84      0.84      0.84       180
+weighted avg       0.84      0.84      0.84       180
+
+[2025-01-31 22:12:46,598] [INFO] - 💾 Logistic Regression model saved successfully.
+[2025-01-31 22:12:46,598] [INFO] - ✅ logistic_regression model trained successfully.
+[2025-01-31 22:12:46,598] [INFO] - 🤖 Training random_forest model...
+[2025-01-31 22:12:46,598] [INFO] - 🌳 Training Random Forest model...
+[2025-01-31 22:12:46,598] [INFO] - 🔬 Performing hyperparameter tuning...
+[2025-01-31 22:13:28,287] [INFO] - ✅ Best Parameters: {'n_estimators': 500, 'min_samples_split': 2, 'min_samples_leaf': 1, 'max_depth': 50, 'class_weight': 'balanced_subsample', 'bootstrap': True}
+[2025-01-31 22:13:28,328] [INFO] - 📊 Validation Accuracy: 0.9497
+[2025-01-31 22:13:28,376] [INFO] - 📈 Test Accuracy: 0.9111
+[2025-01-31 22:13:28,376] [INFO] - 📜 Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.90      0.92      0.91        85
+           1       0.92      0.91      0.91        95
+
+    accuracy                           0.91       180
+   macro avg       0.91      0.91      0.91       180
+weighted avg       0.91      0.91      0.91       180
+
+[2025-01-31 22:13:28,551] [INFO] - 💾 Random Forest model saved successfully.
+[2025-01-31 22:13:28,552] [INFO] - ✅ random_forest model trained successfully.
+[2025-01-31 22:13:28,552] [INFO] - 🤖 Training svm model...
+[2025-01-31 22:13:28,552] [INFO] - 🔍 Training SVM model...
+[2025-01-31 22:13:28,552] [INFO] - 🔬 Performing hyperparameter tuning...
+[2025-01-31 22:14:28,977] [INFO] - ✅ Best Parameters: {'shrinking': True, 'kernel': 'rbf', 'gamma': 'auto', 'degree': 3, 'C': 1000}
+[2025-01-31 22:14:28,986] [INFO] - 📊 Validation Accuracy: 0.8827
+[2025-01-31 22:14:28,999] [INFO] - 📈 Test Accuracy: 0.8444
+[2025-01-31 22:14:28,999] [INFO] - 📜 Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.80      0.89      0.84        85
+           1       0.89      0.80      0.84        95
+
+    accuracy                           0.84       180
+   macro avg       0.85      0.85      0.84       180
+weighted avg       0.85      0.84      0.84       180
+
+[2025-01-31 22:14:29,001] [INFO] - 💾 SVM model saved successfully.
+[2025-01-31 22:14:29,001] [INFO] - ✅ svm model trained successfully.
+[2025-01-31 22:14:29,001] [INFO] - ✅ All models trained successfully.
+[2025-01-31 22:14:29,001] [INFO] - 📊 Running model comparison...
+[2025-01-31 22:14:29,001] [INFO] - 📊 Starting model comparison...
+[2025-01-31 22:14:29,002] [ERROR] - ❌ C:\Users\Peter\IdeaProjects\HeartDiseaseClassifier\models\feature_names.pkl is not a valid scikit-learn model. Got <class 'list'> instead.
+[2025-01-31 22:14:29,264] [INFO] - 
+📊 Model Comparison:
+                     Accuracy  Precision    Recall  F1 Score   ROC AUC
+Logistic_Regression  0.838889   0.851064  0.842105  0.846561  0.918266
+Random_Forest        0.911111   0.924731  0.905263  0.914894  0.960433
+Svm                  0.844444   0.894118  0.800000  0.844444  0.904149
+[2025-01-31 22:14:29,268] [INFO] - 🏆 Best Model: Random_Forest with Accuracy: 0.9111
+[2025-01-31 22:14:29,268] [INFO] - ✅ Pipeline execution completed successfully.

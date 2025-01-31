@@ -1,11 +1,9 @@
-import config
 from data_preprocessing import load_and_preprocess_data
 from models.train_random_forest import train_random_forest
 from models.train_logistic_regression import train_logistic_regression
 from models.train_svm import train_svm
 from compare_models import compare_models
 from logger import logger
-import importlib
 
 # Define available models
 MODEL_TRAINING_FUNCTIONS = {

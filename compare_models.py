@@ -6,7 +6,6 @@ from logger import logger
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, roc_auc_score
 from sklearn.base import BaseEstimator
 
-
 def load_model(model_path):
     """Safely load a trained model from a file."""
     try:
@@ -19,7 +18,6 @@ def load_model(model_path):
     except Exception as e:
         logger.error(f"❌ Failed to load model from {model_path}: {e}")
         return None
-
 
 def evaluate_model(model, X_test, y_test):
     """Evaluate a model and return performance metrics."""
@@ -41,7 +39,6 @@ def evaluate_model(model, X_test, y_test):
     except Exception as e:
         logger.error(f"❌ Error evaluating model: {e}")
         return {"Accuracy": "Error", "Precision": "Error", "Recall": "Error", "F1 Score": "Error", "ROC AUC": "Error"}
-
 
 def compare_models(X_test, y_test):
     """Load models and compare their performance."""
@@ -67,7 +64,6 @@ def compare_models(X_test, y_test):
     logger.info("\n📊 Model Comparison:\n" + df_results.to_string())
 
     return df_results
-
 
 if __name__ == "__main__":
     from data_preprocessing import load_and_preprocess_data

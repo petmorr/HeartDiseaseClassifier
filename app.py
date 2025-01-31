@@ -19,6 +19,7 @@ max_heart_rate = st.number_input("Max Heart Rate", min_value=50, max_value=250)
 exercise_angina = st.radio("Exercise-Induced Angina", [0, 1])
 oldpeak = st.number_input("Oldpeak", min_value=0.0, max_value=10.0)
 st_slope = st.selectbox("ST Slope", [0, 1, 2])
+target = st.number_input("Target", [0, 1])
 
 # Prediction button
 if st.button("Predict"):
@@ -26,7 +27,7 @@ if st.button("Predict"):
         "age": age, "sex": sex, "chest_pain_type": chest_pain_type, "resting_bp": resting_bp,
         "cholesterol": cholesterol, "fasting_blood_sugar": fasting_blood_sugar, "resting_ecg": resting_ecg,
         "max_heart_rate": max_heart_rate, "exercise_angina": exercise_angina, "oldpeak": oldpeak,
-        "st_slope": st_slope
+        "st_slope": st_slope, "target": target
     }
 
     response = requests.post(f"http://localhost:8000/predict/{model_name}", json=data)

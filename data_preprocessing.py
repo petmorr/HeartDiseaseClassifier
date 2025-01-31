@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 from logger import logger
 from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import StandardScaler, MinMaxScaler
+from sklearn.preprocessing import MinMaxScaler
 from imblearn.over_sampling import SMOTE
 import joblib
 import config
