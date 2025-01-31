@@ -13,7 +13,7 @@ The **Heart Disease Classifier** is a machine learning-based web application des
 ✅ **Hyperparameter Optimization:** Fine-tuned models for better accuracy  
 ✅ **Logging:** Centralized logging for debugging and tracking  
 ✅ **Docker Ready:** Easily deployable with containerization  
-
+❌ **Cure Heart Disease**
 ---
 
 ## 📂 Project Structure
