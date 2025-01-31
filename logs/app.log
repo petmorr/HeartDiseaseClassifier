@@ -1,0 +1,353 @@
+[2025-01-31 21:32:40,925] [INFO] - 🚀 Starting full model training and evaluation pipeline...
+[2025-01-31 21:32:40,926] [INFO] - 📊 Running data processing...
+[2025-01-31 21:32:40,926] [INFO] - 📂 Loading dataset...
+[2025-01-31 21:32:40,938] [ERROR] - ❌ Data processing failed: Input X contains infinity or a value too large for dtype('float64').
+[2025-01-31 21:33:22,712] [INFO] - 🚀 Starting full model training and evaluation pipeline...
+[2025-01-31 21:33:22,712] [INFO] - 📊 Running data processing...
+[2025-01-31 21:33:22,712] [INFO] - 📂 Loading dataset...
+[2025-01-31 21:33:22,734] [ERROR] - ❌ Data processing failed: The specified ratio required to remove samples from the minority class while trying to generate new samples. Please increase the ratio.
+[2025-01-31 21:34:44,801] [INFO] - 🚀 Starting full model training and evaluation pipeline...
+[2025-01-31 21:34:44,801] [INFO] - 📊 Running data processing...
+[2025-01-31 21:34:44,801] [INFO] - 📂 Loading dataset...
+[2025-01-31 21:34:44,821] [INFO] - 🟢 Applying SMOTE with safe_sampling_strategy=0.90
+[2025-01-31 21:34:44,981] [INFO] - ✅ Data preprocessing completed successfully.
+[2025-01-31 21:34:44,981] [INFO] - ✅ Data processing completed successfully.
+[2025-01-31 21:34:44,981] [INFO] - 🤖 Training random_forest model...
+[2025-01-31 21:34:44,986] [ERROR] - ❌ random_forest training failed: module 'models.train_random_forest' has no attribute 'train'
+[2025-01-31 21:34:44,986] [INFO] - 🤖 Training logistic_regression model...
+[2025-01-31 21:34:44,988] [ERROR] - ❌ logistic_regression training failed: module 'models.train_logistic_regression' has no attribute 'train'
+[2025-01-31 21:34:44,988] [INFO] - 🤖 Training svm model...
+[2025-01-31 21:34:44,990] [ERROR] - ❌ svm training failed: module 'models.train_svm' has no attribute 'train'
+[2025-01-31 21:34:44,990] [INFO] - ✅ All models trained successfully.
+[2025-01-31 21:34:44,991] [INFO] - 📊 Running model comparison...
+[2025-01-31 21:34:44,991] [ERROR] - ❌ Model comparison failed: compare_models() missing 2 required positional arguments: 'X_test' and 'y_test'
+[2025-01-31 21:34:44,991] [INFO] - ✅ Pipeline execution completed successfully.
+[2025-01-31 21:36:08,903] [INFO] - 🚀 Starting full model training and evaluation pipeline...
+[2025-01-31 21:36:08,903] [INFO] - 📊 Running data processing...
+[2025-01-31 21:36:08,903] [INFO] - 📂 Loading dataset...
+[2025-01-31 21:36:08,921] [INFO] - 🟢 Applying SMOTE with safe_sampling_strategy=0.90
+[2025-01-31 21:36:09,069] [INFO] - ✅ Data preprocessing completed successfully.
+[2025-01-31 21:36:09,069] [INFO] - ✅ Data processing completed successfully.
+[2025-01-31 21:36:09,069] [INFO] - 🤖 Training random_forest model...
+[2025-01-31 21:36:09,069] [INFO] - 🌳 Training Random Forest model...
+[2025-01-31 21:36:09,069] [INFO] - 🔬 Performing hyperparameter tuning...
+[2025-01-31 21:36:52,770] [INFO] - ✅ Best Parameters: {'n_estimators': 100, 'min_samples_split': 5, 'min_samples_leaf': 1, 'max_depth': 100, 'class_weight': None, 'bootstrap': False}
+[2025-01-31 21:36:52,780] [INFO] - 📊 Validation Accuracy: 0.9106
+[2025-01-31 21:36:52,796] [INFO] - 📈 Test Accuracy: 0.9000
+[2025-01-31 21:36:52,796] [INFO] - 📜 Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.89      0.89      0.89        85
+           1       0.91      0.91      0.91        95
+
+    accuracy                           0.90       180
+   macro avg       0.90      0.90      0.90       180
+weighted avg       0.90      0.90      0.90       180
+
+[2025-01-31 21:36:52,830] [INFO] - 💾 Random Forest model saved successfully.
+[2025-01-31 21:36:52,831] [INFO] - 🤖 Training logistic_regression model...
+[2025-01-31 21:36:52,831] [INFO] - 🔍 Training Logistic Regression model...
+[2025-01-31 21:36:52,831] [INFO] - 🔬 Performing hyperparameter tuning...
+[2025-01-31 21:36:53,600] [INFO] - ✅ Best Parameters: {'solver': 'liblinear', 'penalty': 'l2', 'C': 0.01}
+[2025-01-31 21:36:53,603] [INFO] - 📊 Validation Accuracy: 0.8324
+[2025-01-31 21:36:53,611] [INFO] - 📈 Test Accuracy: 0.8222
+[2025-01-31 21:36:53,611] [INFO] - 📜 Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.84      0.78      0.80        85
+           1       0.81      0.86      0.84        95
+
+    accuracy                           0.82       180
+   macro avg       0.82      0.82      0.82       180
+weighted avg       0.82      0.82      0.82       180
+
+[2025-01-31 21:36:53,612] [INFO] - 💾 Logistic Regression model saved successfully.
+[2025-01-31 21:36:53,613] [INFO] - 🤖 Training svm model...
+[2025-01-31 21:36:53,613] [INFO] - 🔍 Training SVM model...
+[2025-01-31 21:36:53,613] [INFO] - 🔬 Performing hyperparameter tuning...
+[2025-01-31 21:37:46,219] [INFO] - ✅ Best Parameters: {'shrinking': True, 'kernel': 'linear', 'gamma': 0.1, 'degree': 2, 'C': 10}
+[2025-01-31 21:37:46,222] [INFO] - 📊 Validation Accuracy: 0.8045
+[2025-01-31 21:37:46,231] [INFO] - 📈 Test Accuracy: 0.8111
+[2025-01-31 21:37:46,231] [INFO] - 📜 Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.81      0.78      0.80        85
+           1       0.81      0.84      0.82        95
+
+    accuracy                           0.81       180
+   macro avg       0.81      0.81      0.81       180
+weighted avg       0.81      0.81      0.81       180
+
+[2025-01-31 21:37:46,233] [INFO] - 💾 SVM model saved successfully.
+[2025-01-31 21:37:46,233] [INFO] - ✅ All models trained successfully.
+[2025-01-31 21:37:46,233] [INFO] - 📊 Running model comparison...
+[2025-01-31 21:37:46,233] [ERROR] - ❌ Model comparison failed: compare_models() missing 2 required positional arguments: 'X_test' and 'y_test'
+[2025-01-31 21:37:46,233] [INFO] - ✅ Pipeline execution completed successfully.
+[2025-01-31 21:38:39,028] [INFO] - 🚀 Starting full model training and evaluation pipeline...
+[2025-01-31 21:38:39,028] [INFO] - 📊 Running data processing...
+[2025-01-31 21:38:39,028] [INFO] - 📂 Loading dataset...
+[2025-01-31 21:38:39,047] [INFO] - 🟢 Applying SMOTE with safe_sampling_strategy=0.90
+[2025-01-31 21:38:39,207] [INFO] - ✅ Data preprocessing completed successfully.
+[2025-01-31 21:38:39,207] [INFO] - ✅ Data processing completed successfully.
+[2025-01-31 21:38:39,207] [INFO] - 🤖 Training random_forest model...
+[2025-01-31 21:38:39,207] [INFO] - 🌳 Training Random Forest model...
+[2025-01-31 21:38:39,208] [INFO] - 🔬 Performing hyperparameter tuning...
+[2025-01-31 21:39:22,113] [INFO] - ✅ Best Parameters: {'n_estimators': 100, 'min_samples_split': 2, 'min_samples_leaf': 1, 'max_depth': 50, 'class_weight': None, 'bootstrap': True}
+[2025-01-31 21:39:22,124] [INFO] - 📊 Validation Accuracy: 0.9274
+[2025-01-31 21:39:22,139] [INFO] - 📈 Test Accuracy: 0.9278
+[2025-01-31 21:39:22,139] [INFO] - 📜 Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.93      0.92      0.92        85
+           1       0.93      0.94      0.93        95
+
+    accuracy                           0.93       180
+   macro avg       0.93      0.93      0.93       180
+weighted avg       0.93      0.93      0.93       180
+
+[2025-01-31 21:39:22,173] [INFO] - 💾 Random Forest model saved successfully.
+[2025-01-31 21:39:22,173] [INFO] - 🤖 Training logistic_regression model...
+[2025-01-31 21:39:22,174] [INFO] - 🔍 Training Logistic Regression model...
+[2025-01-31 21:39:22,174] [INFO] - 🔬 Performing hyperparameter tuning...
+[2025-01-31 21:39:22,936] [INFO] - ✅ Best Parameters: {'solver': 'liblinear', 'penalty': 'l2', 'C': 0.01}
+[2025-01-31 21:39:22,938] [INFO] - 📊 Validation Accuracy: 0.8436
+[2025-01-31 21:39:22,945] [INFO] - 📈 Test Accuracy: 0.8556
+[2025-01-31 21:39:22,945] [INFO] - 📜 Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.87      0.81      0.84        85
+           1       0.84      0.89      0.87        95
+
+    accuracy                           0.86       180
+   macro avg       0.86      0.85      0.85       180
+weighted avg       0.86      0.86      0.86       180
+
+[2025-01-31 21:39:22,946] [INFO] - 💾 Logistic Regression model saved successfully.
+[2025-01-31 21:39:22,946] [INFO] - 🤖 Training svm model...
+[2025-01-31 21:39:22,946] [INFO] - 🔍 Training SVM model...
+[2025-01-31 21:39:22,947] [INFO] - 🔬 Performing hyperparameter tuning...
+[2025-01-31 21:40:17,008] [INFO] - ✅ Best Parameters: {'shrinking': False, 'kernel': 'poly', 'gamma': 'scale', 'degree': 3, 'C': 10}
+[2025-01-31 21:40:17,011] [INFO] - 📊 Validation Accuracy: 0.8883
+[2025-01-31 21:40:17,020] [INFO] - 📈 Test Accuracy: 0.8333
+[2025-01-31 21:40:17,020] [INFO] - 📜 Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.83      0.81      0.82        85
+           1       0.84      0.85      0.84        95
+
+    accuracy                           0.83       180
+   macro avg       0.83      0.83      0.83       180
+weighted avg       0.83      0.83      0.83       180
+
+[2025-01-31 21:40:17,022] [INFO] - 💾 SVM model saved successfully.
+[2025-01-31 21:40:17,022] [INFO] - ✅ All models trained successfully.
+[2025-01-31 21:40:17,022] [INFO] - 📊 Running model comparison...
+[2025-01-31 21:40:17,023] [INFO] - 📊 Starting model comparison...
+[2025-01-31 21:40:17,105] [INFO] - 
+📊 Model Comparison:
+                     Accuracy  Precision    Recall  F1 Score   ROC AUC
+Logistic_Regression  0.855556   0.841584  0.894737  0.867347  0.919505
+Random_Forest        0.927778   0.927083  0.936842  0.931937  0.965015
+Svm                  0.833333   0.835052  0.852632  0.843750  0.908854
+[2025-01-31 21:40:17,106] [INFO] - 🏆 Best Model: Random_Forest with Accuracy: 0.9278
+[2025-01-31 21:40:17,106] [INFO] - ✅ Pipeline execution completed successfully.
+[2025-01-31 21:49:57,613] [INFO] - 🚀 Starting full model training and evaluation pipeline...
+[2025-01-31 21:49:57,613] [INFO] - 📊 Running data processing...
+[2025-01-31 21:49:57,613] [INFO] - 📂 Loading dataset...
+[2025-01-31 21:49:57,629] [ERROR] - ❌ Data processing failed: name 'joblib' is not defined
+[2025-01-31 21:50:18,483] [INFO] - 🚀 Starting full model training and evaluation pipeline...
+[2025-01-31 21:50:18,483] [INFO] - 📊 Running data processing...
+[2025-01-31 21:50:18,484] [INFO] - 📂 Loading dataset...
+[2025-01-31 21:50:18,504] [INFO] - 🟢 Applying SMOTE with safe_sampling_strategy=0.90
+[2025-01-31 21:50:18,662] [INFO] - ✅ Data preprocessing completed successfully.
+[2025-01-31 21:50:18,663] [INFO] - ✅ Data processing completed successfully.
+[2025-01-31 21:50:18,663] [INFO] - 🤖 Training random_forest model...
+[2025-01-31 21:50:18,663] [INFO] - 🌳 Training Random Forest model...
+[2025-01-31 21:50:18,663] [INFO] - 🔬 Performing hyperparameter tuning...
+[2025-01-31 21:50:56,984] [INFO] - ✅ Best Parameters: {'n_estimators': 100, 'min_samples_split': 2, 'min_samples_leaf': 1, 'max_depth': 100, 'class_weight': 'balanced', 'bootstrap': True}
+[2025-01-31 21:50:56,995] [INFO] - 📊 Validation Accuracy: 0.9106
+[2025-01-31 21:50:57,011] [INFO] - 📈 Test Accuracy: 0.9056
+[2025-01-31 21:50:57,011] [INFO] - 📜 Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.93      0.87      0.90        85
+           1       0.89      0.94      0.91        95
+
+    accuracy                           0.91       180
+   macro avg       0.91      0.90      0.90       180
+weighted avg       0.91      0.91      0.91       180
+
+[2025-01-31 21:50:57,045] [INFO] - 💾 Random Forest model saved successfully.
+[2025-01-31 21:50:57,045] [INFO] - 🤖 Training logistic_regression model...
+[2025-01-31 21:50:57,045] [INFO] - 🔍 Training Logistic Regression model...
+[2025-01-31 21:50:57,045] [INFO] - 🔬 Performing hyperparameter tuning...
+[2025-01-31 21:50:58,022] [INFO] - ✅ Best Parameters: {'solver': 'sag', 'penalty': 'l2', 'C': 0.01}
+[2025-01-31 21:50:58,025] [INFO] - 📊 Validation Accuracy: 0.8603
+[2025-01-31 21:50:58,032] [INFO] - 📈 Test Accuracy: 0.8722
+[2025-01-31 21:50:58,032] [INFO] - 📜 Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.90      0.82      0.86        85
+           1       0.85      0.92      0.88        95
+
+    accuracy                           0.87       180
+   macro avg       0.88      0.87      0.87       180
+weighted avg       0.87      0.87      0.87       180
+
+[2025-01-31 21:50:58,034] [INFO] - 💾 Logistic Regression model saved successfully.
+[2025-01-31 21:50:58,034] [INFO] - 🤖 Training svm model...
+[2025-01-31 21:50:58,034] [INFO] - 🔍 Training SVM model...
+[2025-01-31 21:50:58,034] [INFO] - 🔬 Performing hyperparameter tuning...
+[2025-01-31 21:52:00,354] [INFO] - ✅ Best Parameters: {'shrinking': False, 'kernel': 'rbf', 'gamma': 0.1, 'degree': 3, 'C': 100}
+[2025-01-31 21:52:00,362] [INFO] - 📊 Validation Accuracy: 0.8771
+[2025-01-31 21:52:00,375] [INFO] - 📈 Test Accuracy: 0.8389
+[2025-01-31 21:52:00,375] [INFO] - 📜 Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.87      0.78      0.82        85
+           1       0.82      0.89      0.85        95
+
+    accuracy                           0.84       180
+   macro avg       0.84      0.84      0.84       180
+weighted avg       0.84      0.84      0.84       180
+
+[2025-01-31 21:52:00,377] [INFO] - 💾 SVM model saved successfully.
+[2025-01-31 21:52:00,377] [INFO] - ✅ All models trained successfully.
+[2025-01-31 21:52:00,377] [INFO] - 📊 Running model comparison...
+[2025-01-31 21:52:00,377] [INFO] - 📊 Starting model comparison...
+[2025-01-31 21:52:00,408] [ERROR] - ❌ Model comparison failed: 'list' object has no attribute 'predict'
+[2025-01-31 21:52:00,408] [INFO] - ✅ Pipeline execution completed successfully.
+[2025-01-31 21:54:28,062] [INFO] - 🚀 Starting full model training and evaluation pipeline...
+[2025-01-31 21:54:28,063] [INFO] - 📊 Running data processing...
+[2025-01-31 21:54:28,063] [INFO] - 📂 Loading dataset...
+[2025-01-31 21:54:28,083] [INFO] - 🟢 Applying SMOTE with safe_sampling_strategy=0.90
+[2025-01-31 21:54:28,241] [INFO] - ✅ Data preprocessing completed successfully.
+[2025-01-31 21:54:28,241] [INFO] - ✅ Data processing completed successfully.
+[2025-01-31 21:54:28,241] [INFO] - 🤖 Training random_forest model...
+[2025-01-31 21:54:28,242] [INFO] - 🌳 Training Random Forest model...
+[2025-01-31 21:54:28,242] [INFO] - 🔬 Performing hyperparameter tuning...
+[2025-01-31 21:55:06,361] [INFO] - ✅ Best Parameters: {'n_estimators': 100, 'min_samples_split': 5, 'min_samples_leaf': 1, 'max_depth': 100, 'class_weight': None, 'bootstrap': False}
+[2025-01-31 21:55:06,371] [INFO] - 📊 Validation Accuracy: 0.8939
+[2025-01-31 21:55:06,386] [INFO] - 📈 Test Accuracy: 0.9167
+[2025-01-31 21:55:06,386] [INFO] - 📜 Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.97      0.85      0.91        85
+           1       0.88      0.98      0.93        95
+
+    accuracy                           0.92       180
+   macro avg       0.93      0.91      0.92       180
+weighted avg       0.92      0.92      0.92       180
+
+[2025-01-31 21:55:06,419] [INFO] - 💾 Random Forest model saved successfully.
+[2025-01-31 21:55:06,419] [INFO] - 🤖 Training logistic_regression model...
+[2025-01-31 21:55:06,419] [INFO] - 🔍 Training Logistic Regression model...
+[2025-01-31 21:55:06,419] [INFO] - 🔬 Performing hyperparameter tuning...
+[2025-01-31 21:55:07,417] [INFO] - ✅ Best Parameters: {'solver': 'sag', 'penalty': 'l2', 'C': 0.01}
+[2025-01-31 21:55:07,420] [INFO] - 📊 Validation Accuracy: 0.7989
+[2025-01-31 21:55:07,428] [INFO] - 📈 Test Accuracy: 0.8389
+[2025-01-31 21:55:07,428] [INFO] - 📜 Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.84      0.81      0.83        85
+           1       0.84      0.86      0.85        95
+
+    accuracy                           0.84       180
+   macro avg       0.84      0.84      0.84       180
+weighted avg       0.84      0.84      0.84       180
+
+[2025-01-31 21:55:07,430] [INFO] - 💾 Logistic Regression model saved successfully.
+[2025-01-31 21:55:07,430] [INFO] - 🤖 Training svm model...
+[2025-01-31 21:55:07,430] [INFO] - 🔍 Training SVM model...
+[2025-01-31 21:55:07,430] [INFO] - 🔬 Performing hyperparameter tuning...
+[2025-01-31 21:57:02,240] [INFO] - ✅ Best Parameters: {'shrinking': False, 'kernel': 'linear', 'gamma': 'auto', 'degree': 4, 'C': 1}
+[2025-01-31 21:57:02,244] [INFO] - 📊 Validation Accuracy: 0.8045
+[2025-01-31 21:57:02,253] [INFO] - 📈 Test Accuracy: 0.8389
+[2025-01-31 21:57:02,253] [INFO] - 📜 Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.85      0.80      0.82        85
+           1       0.83      0.87      0.85        95
+
+    accuracy                           0.84       180
+   macro avg       0.84      0.84      0.84       180
+weighted avg       0.84      0.84      0.84       180
+
+[2025-01-31 21:57:02,255] [INFO] - 💾 SVM model saved successfully.
+[2025-01-31 21:57:02,255] [INFO] - ✅ All models trained successfully.
+[2025-01-31 21:57:02,255] [INFO] - 📊 Running model comparison...
+[2025-01-31 21:57:02,255] [INFO] - 📊 Starting model comparison...
+[2025-01-31 21:57:02,284] [ERROR] - ❌ Model comparison failed: 'list' object has no attribute 'predict'
+[2025-01-31 21:57:02,284] [INFO] - ✅ Pipeline execution completed successfully.
+[2025-01-31 22:01:53,726] [INFO] - 🚀 Starting full model training and evaluation pipeline...
+[2025-01-31 22:01:53,726] [INFO] - 📊 Running data processing...
+[2025-01-31 22:01:53,726] [INFO] - 📂 Loading dataset...
+[2025-01-31 22:01:53,746] [INFO] - 🟢 Applying SMOTE with safe_sampling_strategy=0.90
+[2025-01-31 22:01:53,906] [INFO] - ✅ Data preprocessing completed successfully.
+[2025-01-31 22:01:53,906] [INFO] - ✅ Data processing completed successfully.
+[2025-01-31 22:01:53,906] [INFO] - 🤖 Training random_forest model...
+[2025-01-31 22:01:53,907] [INFO] - 🌳 Training Random Forest model...
+[2025-01-31 22:01:53,907] [INFO] - 🔬 Performing hyperparameter tuning...
+[2025-01-31 22:02:31,942] [INFO] - ✅ Best Parameters: {'n_estimators': 100, 'min_samples_split': 2, 'min_samples_leaf': 1, 'max_depth': 100, 'class_weight': 'balanced', 'bootstrap': True}
+[2025-01-31 22:02:31,952] [INFO] - 📊 Validation Accuracy: 0.9106
+[2025-01-31 22:02:31,968] [INFO] - 📈 Test Accuracy: 0.9056
+[2025-01-31 22:02:31,968] [INFO] - 📜 Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.88      0.93      0.90        85
+           1       0.93      0.88      0.91        95
+
+    accuracy                           0.91       180
+   macro avg       0.91      0.91      0.91       180
+weighted avg       0.91      0.91      0.91       180
+
+[2025-01-31 22:02:32,003] [INFO] - 💾 Random Forest model saved successfully.
+[2025-01-31 22:02:32,003] [INFO] - ✅ random_forest model trained successfully.
+[2025-01-31 22:02:32,004] [INFO] - 🤖 Training logistic_regression model...
+[2025-01-31 22:02:32,004] [INFO] - 🔍 Training Logistic Regression model...
+[2025-01-31 22:02:32,004] [INFO] - 🔬 Performing hyperparameter tuning...
+[2025-01-31 22:02:32,738] [INFO] - ✅ Best Parameters: {'solver': 'liblinear', 'penalty': 'l2', 'C': 0.01}
+[2025-01-31 22:02:32,740] [INFO] - 📊 Validation Accuracy: 0.8380
+[2025-01-31 22:02:32,747] [INFO] - 📈 Test Accuracy: 0.8667
+[2025-01-31 22:02:32,747] [INFO] - 📜 Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.87      0.85      0.86        85
+           1       0.87      0.88      0.88        95
+
+    accuracy                           0.87       180
+   macro avg       0.87      0.87      0.87       180
+weighted avg       0.87      0.87      0.87       180
+
+[2025-01-31 22:02:32,749] [INFO] - 💾 Logistic Regression model saved successfully.
+[2025-01-31 22:02:32,749] [INFO] - ✅ logistic_regression model trained successfully.
+[2025-01-31 22:02:32,749] [INFO] - 🤖 Training svm model...
+[2025-01-31 22:02:32,749] [INFO] - 🔍 Training SVM model...
+[2025-01-31 22:02:32,749] [INFO] - 🔬 Performing hyperparameter tuning...
+[2025-01-31 22:03:36,274] [INFO] - ✅ Best Parameters: {'shrinking': True, 'kernel': 'rbf', 'gamma': 'auto', 'degree': 3, 'C': 1000}
+[2025-01-31 22:03:36,282] [INFO] - 📊 Validation Accuracy: 0.8380
+[2025-01-31 22:03:36,296] [INFO] - 📈 Test Accuracy: 0.8389
+[2025-01-31 22:03:36,296] [INFO] - 📜 Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.82      0.85      0.83        85
+           1       0.86      0.83      0.84        95
+
+    accuracy                           0.84       180
+   macro avg       0.84      0.84      0.84       180
+weighted avg       0.84      0.84      0.84       180
+
+[2025-01-31 22:03:36,298] [INFO] - 💾 SVM model saved successfully.
+[2025-01-31 22:03:36,299] [INFO] - ✅ svm model trained successfully.
+[2025-01-31 22:03:36,299] [INFO] - ✅ All models trained successfully.
+[2025-01-31 22:03:36,299] [INFO] - 📊 Running model comparison...
+[2025-01-31 22:03:36,299] [INFO] - 📊 Starting model comparison...
+[2025-01-31 22:03:36,299] [ERROR] - ❌ C:\Users\Peter\IdeaProjects\HeartDiseaseClassifier\models\feature_names.pkl is not a valid scikit-learn model. Got <class 'list'> instead.
+[2025-01-31 22:03:36,390] [INFO] - 
+📊 Model Comparison:
+                     Accuracy  Precision    Recall  F1 Score   ROC AUC
+Logistic_Regression  0.866667   0.865979  0.884211  0.875000  0.937214
+Random_Forest        0.905556   0.933333  0.884211  0.908108  0.963282
+Svm                  0.838889   0.858696  0.831579  0.844920  0.933251
+[2025-01-31 22:03:36,391] [INFO] - 🏆 Best Model: Random_Forest with Accuracy: 0.9056
+[2025-01-31 22:03:36,391] [INFO] - ✅ Pipeline execution completed successfully.
