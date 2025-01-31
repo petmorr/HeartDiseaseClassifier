@@ -10,10 +10,11 @@ The **Heart Disease Classifier** is a machine learning-based web application des
 ✅ **FastAPI Backend:** REST API for model inference  
 ✅ **Streamlit UI:** Interactive web-based interface for user predictions  
 ✅ **SMOTE Handling:** Balances dataset to improve model performance  
-✅ **Hyperparameter Optimization:** Fine-tuned models for better accuracy  
-✅ **Logging:** Centralized logging for debugging and tracking  
-✅ **Docker Ready:** Easily deployable with containerization  
-❌ **Cure Heart Disease**
+✅ **Hyperparameter Optimisation:** Fine-tuned models for better accuracy  
+✅ **Logging:** Centralised logging for debugging and tracking  
+✅ **Docker Ready:** Easily deployable with containerisation  
+❌ **Cure Heart Disease:** Yeah, I don't think this is capable in Python
+
 ---
 
 ## 📂 Project Structure
@@ -30,7 +31,7 @@ HeartDiseaseClassifier/
 │── app.py # Streamlit UI 
 │── config.py # Configuration file 
 │── main.py # Main script to train and evaluate models 
-│── logger.py # Centralized logging setup 
+│── logger.py # Centralised logging setup 
 │── data_preprocessing.py # Data cleaning & feature engineering 
 │── compare_models.py # Model evaluation and comparison  
 │── requirements.txt # Project dependencies 
@@ -46,7 +47,7 @@ Ensure you have the following installed:
 - **Python 3.8+**
 - **pip**
 - **virtualenv (optional)**
-- **Docker (optional for containerization)**
+- **Docker (optional for containerisation)**
 
 ### 🚀 Setup Steps
 1. **Clone the repository**  
@@ -86,7 +87,7 @@ UI will be available at:
 
 ## 🔬 Model Training
 
-* The dataset undergoes preprocessing (handling missing values, encoding, normalization).
+* The dataset undergoes preprocessing (handling missing values, encoding, normalisation).
 * SMOTE is applied to balance class distribution.
 * Hyperparameter tuning is performed using GridSearchCV.
 * The models are trained and saved as .pkl files for deployment.
