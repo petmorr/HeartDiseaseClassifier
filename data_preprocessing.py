@@ -4,6 +4,7 @@ from logger import logger
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler, MinMaxScaler
 from imblearn.over_sampling import SMOTE
+import joblib
 import config
 
 def load_and_preprocess_data():
@@ -36,6 +37,9 @@ def load_and_preprocess_data():
     # One-hot encoding categorical features
     categorical_features = ["chest_pain_type", "resting_ecg", "st_slope"]
     df = pd.get_dummies(df, columns=categorical_features, drop_first=True)
+
+    # Save feature names
+    joblib.dump(df.columns.tolist(), f"{config.MODEL_SAVE_PATH}/feature_names.pkl")
 
     # Drop highly correlated features (if correlation > 0.9)
     correlation_matrix = df.corr().abs()
