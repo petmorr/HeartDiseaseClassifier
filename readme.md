@@ -84,7 +84,7 @@ UI will be available at:
 
 ---
 
-# 🔬 Model Training
+## 🔬 Model Training
 
 * The dataset undergoes preprocessing (handling missing values, encoding, normalization).
 * SMOTE is applied to balance class distribution.
@@ -94,7 +94,7 @@ UI will be available at:
 
 ---
 
-# 📊 Model Performance
+## 📊 Model Performance
 
 | Model               | Accuracy | Precision | Recall | F1 Score |
 |---------------------|----------|------------|--------|----------|
@@ -104,7 +104,7 @@ UI will be available at:
 
 ---
 
-# 🐳 Docker Deployment
+## 🐳 Docker Deployment
 
 To deploy the application using Docker, follow these steps:
 
@@ -122,7 +122,7 @@ To deploy the application using Docker, follow these steps:
 
 --- 
 
-# 📌 Future Improvements
+## 📌 Future Improvements
 🔹 Improve hyperparameter tuning for better accuracy
 
 🔹 Implement additional ML models like XGBoost or Neural Networks
@@ -132,5 +132,5 @@ To deploy the application using Docker, follow these steps:
 🔹 Deploy the API and UI to cloud platforms (AWS, Azure, GCP)
 
 ---
-# 📄 License
+## 📄 License
 This project is **open-source** and available under the **MIT License**.
