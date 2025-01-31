@@ -1,6 +1,3 @@
-# Save the markdown content to a file
-
-markdown_content = """\
 # 💖 Heart Disease Classifier
 
 ## 📌 Overview
